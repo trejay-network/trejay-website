@@ -23,13 +23,13 @@ export default function Home() {
       {/* Hero Section */}
       <Section className="pt-24 pb-16">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-5xl font-bold text-pink-500 leading-tight mb-6">
             TreJay is the blockchain network.<br />
             3JAY is its native cryptocurrency.
           </h1>
           
-          <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-            Fast, scarce, and sustainable — ~2-second blocks, &lt;60s finality, and fee burns that tie network usage to value. 3JAY is capped at 42,000,000 (1 3JAY = 100,000,000 jots).
+          <p className="text-xl text-white mb-8 leading-relaxed max-w-3xl mx-auto">
+            Fast, secure, and sustainable. ~2-second blocks, &lt;60s finality, and fee burns that tie network usage to value. 3JAY is capped at 42,000,000 (1 3JAY = 100,000,000 jots).
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -37,7 +37,7 @@ export default function Home() {
               href={LINKS.DOCS}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-slate-900 text-white text-lg font-medium hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-slate-900 text-pink-500 text-lg font-medium hover:bg-slate-800 hover:text-green-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
             >
               Read the Docs
             </a>
@@ -45,7 +45,7 @@ export default function Home() {
               href={LINKS.TELEGRAM_GROUP}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-xl border-2 border-slate-900 text-slate-900 text-lg font-medium hover:bg-slate-900 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-xl border-2 border-slate-900 text-slate-500 text-lg font-medium hover:bg-slate-900 hover:text-green-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
             >
               Join the Community
             </a>
@@ -56,7 +56,7 @@ export default function Home() {
               href={LINKS.TWITTER}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-600 hover:text-slate-900 transition-colors"
+              className="text-slate-400 hover:text-slate-200 transition-colors"
             >
               X (@trejaynetwork)
             </a>
@@ -64,7 +64,7 @@ export default function Home() {
               href={LINKS.LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-600 hover:text-slate-900 transition-colors"
+              className="text-slate-400 hover:text-slate-200 transition-colors"
             >
               LinkedIn (TreJay)
             </a>
@@ -72,7 +72,7 @@ export default function Home() {
               href={LINKS.SECURITY}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-600 hover:text-slate-900 transition-colors"
+              className="text-slate-400 hover:text-slate-200 transition-colors"
             >
               Security policy
             </a>
@@ -80,7 +80,7 @@ export default function Home() {
               href={LINKS.CONTRIBUTING}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-600 hover:text-slate-900 transition-colors"
+              className="text-slate-400 hover:text-slate-200 transition-colors"
             >
               Contributing
             </a>
