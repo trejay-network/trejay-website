@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: "TreJay — The Blockchain Network | 3JAY",
   description: "Fast, scarce, and sustainable — ~2-second blocks, <60s finality, and fee burns that tie network usage to value. 3JAY is capped at 42,000,000 (1 3JAY = 100,000,000 jots).",
   metadataBase: new URL("https://trejay.com"),
@@ -54,21 +54,38 @@ export const metadata: Metadata = {
   },
 };
 
+export async function generateMetadata(): Promise<Metadata> {
+  const placeholder = process.env.NEXT_PUBLIC_SHOW_PLACEHOLDER === '1';
+
+  if (placeholder) {
+    return {
+      ...baseMetadata,
+      // tell crawlers not to index while placeholder is active
+      robots: { index: false, follow: false, nocache: true },
+      openGraph: { ...baseMetadata.openGraph, title: 'TreJay Network' },
+      twitter: { ...baseMetadata.twitter, title: 'TreJay Network' },
+    };
+  }
+
+  return baseMetadata;
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const placeholder = process.env.NEXT_PUBLIC_SHOW_PLACEHOLDER === '1';
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-slate-900`}
       >
-        <Header />
+        {!placeholder && <Header />}
         <main className="min-h-screen">
           {children}
         </main>
-        <Footer />
+        {!placeholder && <Footer />}
       </body>
     </html>
   );

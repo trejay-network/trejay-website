@@ -2,7 +2,22 @@ import Section from '@/components/Section';
 import ResourceCard from '@/components/ResourceCard';
 import { LINKS } from '@/lib/links';
 
+console.log('PLACEHOLDER?', process.env.NEXT_PUBLIC_SHOW_PLACEHOLDER);
+
 export default function Home() {
+  const showPlaceholder =
+    process.env.NEXT_PUBLIC_SHOW_PLACEHOLDER === '1';
+
+  if (showPlaceholder) {
+    return (
+      <main className="min-h-dvh grid place-items-center p-8">
+        <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">
+          TreJay Network
+        </h1>
+      </main>
+    );
+  }
+
   return (
     <>
       {/* Hero Section */}
