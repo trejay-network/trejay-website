@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TreJay Website
+
+The official website for TreJay Network - the blockchain network with 3JAY as its native cryptocurrency.
+
+## Tech Stack
+
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS v4** - Utility-first styling
+- **Vercel** - Deployment and hosting
+
+## Features
+
+- **Clean, minimal design** with investor-grade UI
+- **Mobile-first responsive** layout
+- **SEO optimized** with proper meta tags and sitemap
+- **Fast performance** with static generation
+- **Accessible** components with focus management
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+This website is designed to be deployed on [Vercel](https://vercel.com). Connect your GitHub repository to Vercel for automatic deployments.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/trejay-network/trejay-website)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+src/
+├── app/                 # Next.js App Router
+│   ├── layout.tsx       # Root layout with metadata
+│   ├── page.tsx         # Homepage content
+│   └── sitemap.ts       # Dynamic sitemap
+├── components/          # Reusable components
+│   ├── Header.tsx       # Navigation header
+│   ├── Footer.tsx       # Site footer
+│   ├── Section.tsx      # Section wrapper
+│   └── ResourceCard.tsx # Resource grid cards
+└── lib/
+    └── links.ts         # External URL constants
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Links
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Website**: https://trejay.com
+- **GitHub**: https://github.com/trejay-network
+- **Documentation**: https://github.com/trejay-network/docs
+- **Community**: https://t.me/trejaynetwork

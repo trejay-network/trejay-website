@@ -1,103 +1,187 @@
-import Image from "next/image";
+import Section from '@/components/Section';
+import ResourceCard from '@/components/ResourceCard';
+import { LINKS } from '@/lib/links';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      {/* Hero Section */}
+      <Section className="pt-24 pb-16">
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
+            TreJay is the blockchain network.<br />
+            3JAY is its native cryptocurrency.
+          </h1>
+          
+          <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+            Fast, scarce, and sustainable — ~2-second blocks, &lt;60s finality, and fee burns that tie network usage to value. 3JAY is capped at 42,000,000 (1 3JAY = 100,000,000 jots).
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <a
+              href={LINKS.DOCS}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-slate-900 text-white text-lg font-medium hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
+            >
+              Read the Docs
+            </a>
+            <a
+              href={LINKS.TELEGRAM_GROUP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-xl border-2 border-slate-900 text-slate-900 text-lg font-medium hover:bg-slate-900 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
+            >
+              Join the Community
+            </a>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <a
+              href={LINKS.TWITTER}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-600 hover:text-slate-900 transition-colors"
+            >
+              X (@trejaynetwork)
+            </a>
+            <a
+              href={LINKS.LINKEDIN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-600 hover:text-slate-900 transition-colors"
+            >
+              LinkedIn (TreJay)
+            </a>
+            <a
+              href={LINKS.SECURITY}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-600 hover:text-slate-900 transition-colors"
+            >
+              Security policy
+            </a>
+            <a
+              href={LINKS.CONTRIBUTING}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-600 hover:text-slate-900 transition-colors"
+            >
+              Contributing
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </Section>
+
+      {/* Credibility Band */}
+      <Section className="bg-slate-50 py-12">
+        <div className="text-center">
+          <div className="flex flex-wrap justify-center gap-4 mb-4">
+            {['Proof of Stake', '~2s blocks', '<60s finality', 'EIP-1559 fee burns', 'DAO treasury'].map((spec) => (
+              <span
+                key={spec}
+                className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium"
+              >
+                {spec}
+              </span>
+            ))}
+          </div>
+          <p className="text-slate-600">
+            Transparent supply, on-chain vesting, and auditable genesis.
+          </p>
+        </div>
+      </Section>
+
+      {/* Invitation Section */}
+      <Section>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+            Get involved early.
+          </h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="text-center">
+            <h3 className="text-xl font-semibold text-slate-900 mb-4">Developers</h3>
+            <p className="text-slate-600 mb-6 leading-relaxed">
+              Contribute to open repos and help shape the protocol.
+            </p>
+            <a
+              href={LINKS.CHAIN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
+            >
+              View Chain Repo
+            </a>
+          </div>
+          
+          <div className="text-center">
+            <h3 className="text-xl font-semibold text-slate-900 mb-4">Validators</h3>
+            <p className="text-slate-600 mb-6 leading-relaxed">
+              Prepare to secure the network and earn staking rewards.
+            </p>
+            <a
+              href={LINKS.DOCS}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
+            >
+              Read Documentation
+            </a>
+          </div>
+          
+          <div className="text-center">
+            <h3 className="text-xl font-semibold text-slate-900 mb-4">Community</h3>
+            <p className="text-slate-600 mb-6 leading-relaxed">
+              Join governance, participate in the DAO, and help steer TreJay&apos;s future.
+            </p>
+            <a
+              href={LINKS.TELEGRAM_GROUP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
+            >
+              Join Telegram
+            </a>
+          </div>
+        </div>
+      </Section>
+
+      {/* Resource Grid */}
+      <Section className="bg-slate-50">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+            Open Resources
+          </h2>
+          <p className="text-xl text-slate-600">
+            Everything is transparent and auditable on GitHub.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <ResourceCard
+            title="Docs"
+            description="Technical & governance documentation for the TreJay network."
+            href={LINKS.DOCS}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <ResourceCard
+            title="TreJay Chain"
+            description="Core protocol and client implementation source code."
+            href={LINKS.CHAIN}
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <ResourceCard
+            title="Genesis"
+            description="Allocations & supply proofs for transparent token distribution."
+            href={LINKS.GENESIS}
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <ResourceCard
+            title="Tests"
+            description="Invariant & economic tests ensuring protocol reliability."
+            href={LINKS.TESTS}
+          />
+        </div>
+      </Section>
+    </>
   );
 }
